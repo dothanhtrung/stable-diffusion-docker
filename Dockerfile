@@ -8,17 +8,17 @@ RUN mkdir -p /sd-models
 #   wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
 #   wget https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors
 #   wget https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors
-COPY sd_xl_base_1.0.safetensors /sd-models/sd_xl_base_1.0.safetensors
-COPY sd_xl_refiner_1.0.safetensors /sd-models/sd_xl_refiner_1.0.safetensors
-COPY sdxl_vae.safetensors /sd-models/sdxl_vae.safetensors
+# COPY sd_xl_base_1.0.safetensors /sd-models/sd_xl_base_1.0.safetensors
+# COPY sd_xl_refiner_1.0.safetensors /sd-models/sd_xl_refiner_1.0.safetensors
+# COPY sdxl_vae.safetensors /sd-models/sdxl_vae.safetensors
 
 # Clone the git repo of the Stable Diffusion Web UI by Automatic1111
 # and set version
 ARG WEBUI_VERSION
 WORKDIR /
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git && \
-    cd /stable-diffusion-webui && \
-    git checkout tags/${WEBUI_VERSION}
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+    # cd /stable-diffusion-webui && \
+    # git checkout tags/${WEBUI_VERSION}
 
 ARG TORCH_VERSION
 ARG XFORMERS_VERSION

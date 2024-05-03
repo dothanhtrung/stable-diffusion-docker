@@ -70,11 +70,16 @@ link_models() {
    fi
 }
 
+personal_setup() {
+    curl https://raw.githubusercontent.com/dothanhtrung/stable-diffusion-docker/main/scripts/personal_setup.sh | bash
+}
+
 if [ "$(printf '%s\n' "$EXISTING_VERSION" "$TEMPLATE_VERSION" | sort -V | head -n 1)" = "$EXISTING_VERSION" ]; then
     if [ "$EXISTING_VERSION" != "$TEMPLATE_VERSION" ]; then
         sync_apps
         fix_venvs
         link_models
+        personal_setup
 
         # Add VENV_PATH to webui-user.sh
         sed -i "s|venv_dir=VENV_PATH|venv_dir=${VENV_PATH}\"\"|" /workspace/stable-diffusion-webui/webui-user.sh
