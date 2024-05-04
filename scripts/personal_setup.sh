@@ -2,11 +2,11 @@
  
 mkdir -p /workspace/ComfyUI/custom_nodes
 cd /workspace/ComfyUI/custom_nodes
-test -d comfyui_controlnet_aux || git clone https://github.com/Fannovel16/comfyui_controlnet_aux &
-test -d ComfyUI_IPAdapter_plus || git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus &
-test -d ComfyUI_UltimateSDUpscale || git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale &
-test -d comfyui-inpaint-nodes || git clone https://github.com/Acly/comfyui-inpaint-nodes &
-test -d comfyui-tooling-nodes || git clone https://github.com/Acly/comfyui-tooling-nodes &
+test -d comfyui_controlnet_aux || git clone --recurse-submodules https://github.com/Fannovel16/comfyui_controlnet_aux &
+test -d ComfyUI_IPAdapter_plus || git clone --recurse-submodules https://github.com/cubiq/ComfyUI_IPAdapter_plus &
+test -d ComfyUI_UltimateSDUpscale || git clone --recurse-submodules https://github.com/ssitu/ComfyUI_UltimateSDUpscale &
+test -d comfyui-inpaint-nodes || git clone --recurse-submodules https://github.com/Acly/comfyui-inpaint-nodes &
+test -d comfyui-tooling-nodes || git clone --recurse-submodules https://github.com/Acly/comfyui-tooling-nodes &
 
 mkdir -p /workspace/ComfyUI/custom_nodes/models/clip_vision/SD1.5
 cd /workspace/ComfyUI/custom_nodes/models/clip_vision/SD1.5
