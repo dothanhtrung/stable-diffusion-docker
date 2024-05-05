@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
  
+cd /sd-models
+test -f sdxl_vae.safetensors || wget https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors &
+
 mkdir -p /workspace/ComfyUI/custom_nodes
 cd /workspace/ComfyUI/custom_nodes
 test -d comfyui_controlnet_aux || git clone --recurse-submodules https://github.com/Fannovel16/comfyui_controlnet_aux &
@@ -43,9 +46,6 @@ test -f lcm-lora-sdxl.safetensors || wget "https://huggingface.co/latent-consist
 # cd /workspace/stable-diffusion-webui/models/Stable-diffusion
 # test -f ponyDiffusionV6XL_v6StartWithThisOne.safetensors || wget "https://civitai.com/api/download/models/290640?type=Model&format=SafeTensor&size=pruned&fp=fp16" -O ponyDiffusionV6XL_v6StartWithThisOne.safetensors &
 # test -f realponycutejpFixed_No03.safetensors || wget "https://civitai.com/api/download/models/445811?type=Model&format=SafeTensor&size=full&fp=fp16" -O realponycutejpFixed_No03.safetensors &
-
-# cd /workspace/stable-diffusion-webui/models/VAE
-# test -f PonyDiffusionV6XL-VAE.safetensors || wget "https://civitai.com/api/download/models/290640?type=VAE&format=SafeTensor" -O PonyDiffusionV6XL-VAE.safetensors &
 
 # rclone sync someonepod:/workspace/stable-diffusion-webui/models/Stable-diffusion /workspace/stable-diffusion-webui/models/Stable-diffusion
 # rclone sync someonepod:/workspace/ComfyUI/models /workspace/ComfyUI/models

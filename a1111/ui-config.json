@@ -1799,7 +1799,7 @@
     "inpaint_anything/Sampler/visible": true,
     "inpaint_anything/Sampler/value": "DDIM",
     "inpaint_anything/Sampling Steps/visible": true,
-    "inpaint_anything/Sampling Steps/value": 20,
+    "inpaint_anything/Sampling Steps/value": 30,
     "inpaint_anything/Sampling Steps/minimum": 1,
     "inpaint_anything/Sampling Steps/maximum": 100,
     "inpaint_anything/Sampling Steps/step": 1,

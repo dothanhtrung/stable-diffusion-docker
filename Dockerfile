@@ -218,6 +218,8 @@ COPY --chmod=755 scripts/* ./
 # Copy the accelerate configuration
 COPY kohya_ss/accelerate.yaml ./
 
+RUN apt install -y mosh
+
 # Start the container
 SHELL ["/bin/bash", "--login", "-c"]
 CMD [ "/start.sh" ]
